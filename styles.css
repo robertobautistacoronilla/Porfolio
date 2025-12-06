@@ -1,0 +1,576 @@
+/* styles.css */
+
+/* =========================
+   VARIABLES Y ESTILOS BASE
+   ========================= */
+:root {
+    --color-fondo: #f5f5f5;
+    --color-fondo-secundario: #ffffff;
+    --color-texto: #111111;
+    --color-texto-suave: #555555;
+    --color-acento: #d4a373;
+    --color-borde-suave: #e0e0e0;
+    --color-placeholder: #cccccc;
+    --max-width: 1120px;
+    --header-height: 72px;
+    --transition-base: 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+}
+
+/* Quita márgenes por defecto en textos */
+h1, h2, h3, h4, p {
+    margin: 0;
+}
+
+/* Enlaces base */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Contenedor central reutilizable */
+.section-padding {
+    padding: 80px 20px;
+}
+
+.section-heading {
+    max-width: var(--max-width);
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.section-heading p {
+    color: var(--color-texto-suave);
+}
+
+/* Botón principal reutilizable */
+.btn-primario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 28px;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--color-acento);
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
+}
+
+.btn-primario:hover {
+    transform: translateY(-1px);
+    background-color: #c48c5d;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   HEADER Y NAVEGACIÓN FIJA
+   ========================= */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: rgba(245,245,245,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+    z-index: 100;
+}
+
+.nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 0%;
+    background-color: var(--color-acento);
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+    width: 100%;
+}
+
+/* Compensa el header fijo en el contenido */
+main {
+    padding-top: var(--header-height);
+}
+
+/* =========================
+   SECCIÓN HERO / INICIO
+   ========================= */
+.hero {
+    position: relative;
+    min-height: calc(100vh - var(--header-height));
+    background-image: url("ruta-a-tu-foto-hero.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
+}
+
+.hero-content {
+    position: relative;
+    max-width: 720px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    max-width: 520px;
+    margin-bottom: 24px;
+    color: rgba(255,255,255,0.9);
+}
+
+/* =========================
+   SECCIÓN PORTFOLIO
+   ========================= */
+.portfolio {
+    background-color: var(--color-fondo);
+}
+
+.portfolio-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* Filtros de categorías */
+.portfolio-filters {
+    max-width: var(--max-width);
+    margin: 0 auto 32px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.filter-btn {
+    border-radius: 999px;
+    border: 1px solid var(--color-borde-suave);
+    background-color: var(--color-fondo-secundario);
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base), transform var(--transition-base);
+}
+
+.filter-btn:hover {
+    transform: translateY(-1px);
+}
+
+.filter-btn.active {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+    color: #ffffff;
+}
+
+/* Categorías */
+.portfolio-category {
+    margin-bottom: 40px;
+}
+
+.portfolio-category h3 {
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-weight: 500;
+}
+
+/* Grid de imágenes dentro de cada categoría */
+.portfolio-category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+}
+
+/* Imagen individual del portfolio */
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #ddd;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform 0.6s ease;
+}
+
+.portfolio-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.25), rgba(0,0,0,0));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.06);
+}
+
+.portfolio-item:hover::after {
+    opacity: 1;
+}
+
+/* Ocultación controlada por filtros (JS) */
+.portfolio-category[data-hidden="true"] {
+    display: none;
+}
+
+/* =========================
+   SECCIÓN SOBRE MÍ
+   ========================= */
+.sobre-mi {
+    background-color: var(--color-fondo-secundario);
+}
+
+.sobre-mi-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.sobre-mi-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 16px;
+}
+
+.sobre-mi-texto p + p {
+    margin-top: 12px;
+}
+
+.sobre-mi-texto p {
+    color: var(--color-texto-suave);
+}
+
+/* Placeholder foto de perfil */
+.sobre-mi-foto {
+    display: flex;
+    justify-content: center;
+}
+
+.sobre-mi-foto-placeholder {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 3 / 4;
+    border-radius: 20px;
+    border: 1px dashed var(--color-placeholder);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-placeholder);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+}
+
+/* =========================
+   SECCIÓN CONTACTO
+   ========================= */
+.contacto {
+    background-color: var(--color-fondo);
+}
+
+.contacto-grid {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 40px;
+}
+
+/* Formulario de contacto */
+.contact-form {
+    background-color: var(--color-fondo-secundario);
+    border-radius: 16px;
+    padding: 24px 24px 20px 24px;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    border-radius: 999px;
+    border: 1px solid var(--color-borde-suave);
+    padding: 10px 14px;
+    font: inherit;
+    background-color: #fafafa;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base), background-color var(--transition-base);
+}
+
+.form-group textarea {
+    border-radius: 16px;
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaaaaa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-acento);
+    box-shadow: 0 0 0 1px rgba(212,163,115,0.4);
+    background-color: #ffffff;
+}
+
+.form-note {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--color-texto-suave);
+}
+
+/* Información de contacto y redes sociales */
+.contacto-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.contacto-info p {
+    color: var(--color-texto-suave);
+    margin-bottom: 14px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+/* Iconos simples solo con HTML/CSS */
+.social-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background-color: var(--color-fondo-secundario);
+    border-radius: 999px;
+    border: 1px solid var(--color-borde-suave);
+    transition: background-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.social-icon:hover {
+    transform: translateY(-1px);
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+.social-short {
+    width: 32px;
+    height: 32px;
+    border-radius: 999px;
+    border: 1px solid var(--color-borde-suave);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.social-text {
+    font-size: 0.9rem;
+}
+
+.contacto-pequeno {
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.main-footer {
+    border-top: 1px solid rgba(0,0,0,0.05);
+    padding: 18px 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--color-texto-suave);
+    background-color: var(--color-fondo-secundario);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+   Ajustes por tamaños de pantalla
+   ========================= */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 900px) {
+    .nav-menu {
+        gap: 16px;
+    }
+
+    .portfolio-category-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sobre-mi-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre-mi-foto {
+        order: -1;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Móviles */
+@media (max-width: 640px) {
+    .section-padding {
+        padding: 64px 16px;
+    }
+
+    .nav {
+        padding-inline: 16px;
+    }
+
+    .nav-menu {
+        gap: 12px;
+    }
+
+    .nav-link {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+    }
+
+    .hero {
+        text-align: left;
+        padding-inline: 16px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        max-width: 100%;
+    }
+
+    .portfolio-category-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 20px 18px 18px 18px;
+    }
+}
+
+/* =========================
+   PUNTOS CLAVE MODIFICABLES
+   ========================= */
+/*
+- Cambia el nombre y la marca en .logo y en <title> del HTML.
+- Ajusta la paleta de colores modificando las variables :root (color de fondo, acento, etc.).
+- Cambia el padding global en .section-padding para comprimir o expandir las secciones.
+- Edita la tipografía modificando la propiedad font-family en body si quieres usar otra fuente.
+- Ajusta el comportamiento responsive cambiando los breakpoints en @media (max-width: ...).
+*/
