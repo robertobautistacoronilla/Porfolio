@@ -164,7 +164,7 @@ main {
 .hero {
     position: relative;
     min-height: calc(100vh - var(--header-height));
-    background-image: url("Fondo/yo.JPG");
+    background-image: url("img/yo.JPG");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -574,3 +574,4 @@ main {
 - Edita la tipografía modificando la propiedad font-family en body si quieres usar otra fuente.
 - Ajusta el comportamiento responsive cambiando los breakpoints en @media (max-width: ...).
 */
+
