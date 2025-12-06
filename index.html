@@ -1,0 +1,216 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuNombre Fotografía | Portfolio de retrato, pareja y familia</title>
+    <meta name="description" content="Portfolio fotográfico profesional de retrato, pareja y familia. Fotografía natural y emotiva, centrada en captar momentos reales y luz suave.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav">
+            <a href="#inicio" class="logo">TuNombre Fotografía</a>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#sobre-mi" class="nav-link">Sobre mí</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- INICIO / HERO -->
+        <section id="inicio" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Fotografía de retrato y pareja en Tu ciudad</h1>
+                <p class="hero-subtitle">
+                    Capturando momentos naturales, luz suave y emociones reales.
+                </p>
+                <a href="#portfolio" class="btn-primario">Ver portfolio</a>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section id="portfolio" class="portfolio section-padding">
+            <div class="section-heading">
+                <h2>Portfolio</h2>
+                <p>Una selección de sesiones de pareja, retratos y familia.</p>
+            </div>
+
+            <!-- Filtros de categoría -->
+            <div class="portfolio-filters" aria-label="Filtros de categorías de fotografía">
+                <button type="button" class="filter-btn active" data-filter="todos">Todas</button>
+                <button type="button" class="filter-btn" data-filter="pareja">Sesiones de pareja</button>
+                <button type="button" class="filter-btn" data-filter="retrato">Retratos individuales</button>
+                <button type="button" class="filter-btn" data-filter="familia">Familia</button>
+            </div>
+
+            <!-- Grid de imágenes -->
+            <div class="portfolio-grid">
+                <!-- SESIONES DE PAREJA -->
+                <article class="portfolio-category pareja" data-category="pareja">
+                    <h3>Sesiones de pareja</h3>
+                    <div class="portfolio-category-grid">
+                        <figure class="portfolio-item" data-category="pareja">
+                            <img src="ruta-a-tu-foto-pareja1.jpg" alt="Sesión de fotos de pareja al atardecer en el campo">
+                        </figure>
+                        <figure class="portfolio-item" data-category="pareja">
+                            <img src="ruta-a-tu-foto-pareja2.jpg" alt="Pareja abrazada en una calle con luces cálidas">
+                        </figure>
+                        <figure class="portfolio-item" data-category="pareja">
+                            <img src="ruta-a-tu-foto-pareja3.jpg" alt="Pareja riendo durante una sesión de fotos en exterior">
+                        </figure>
+                        <figure class="portfolio-item" data-category="pareja">
+                            <img src="ruta-a-tu-foto-pareja4.jpg" alt="Fotografía de pareja caminando de la mano en la playa">
+                        </figure>
+                        <figure class="portfolio-item" data-category="pareja">
+                            <img src="ruta-a-tu-foto-pareja5.jpg" alt="Retrato cercano de pareja mirándose a los ojos">
+                        </figure>
+                        <figure class="portfolio-item" data-category="pareja">
+                            <img src="ruta-a-tu-foto-pareja6.jpg" alt="Sesión romántica de pareja con luces de fondo desenfocadas">
+                        </figure>
+                    </div>
+                </article>
+
+                <!-- RETRATOS INDIVIDUALES -->
+                <article class="portfolio-category retrato" data-category="retrato">
+                    <h3>Retratos individuales</h3>
+                    <div class="portfolio-category-grid">
+                        <figure class="portfolio-item" data-category="retrato">
+                            <img src="ruta-a-tu-foto-retrato1.jpg" alt="Retrato individual con luz suave en interior">
+                        </figure>
+                        <figure class="portfolio-item" data-category="retrato">
+                            <img src="ruta-a-tu-foto-retrato2.jpg" alt="Retrato de primer plano con fondo desenfocado">
+                        </figure>
+                        <figure class="portfolio-item" data-category="retrato">
+                            <img src="ruta-a-tu-foto-retrato3.jpg" alt="Persona posando en la calle con luces urbanas de fondo">
+                        </figure>
+                        <figure class="portfolio-item" data-category="retrato">
+                            <img src="ruta-a-tu-foto-retrato4.jpg" alt="Retrato en blanco y negro con expresión natural">
+                        </figure>
+                        <figure class="portfolio-item" data-category="retrato">
+                            <img src="ruta-a-tu-foto-retrato5.jpg" alt="Sesión de retrato al aire libre con vegetación detrás">
+                        </figure>
+                        <figure class="portfolio-item" data-category="retrato">
+                            <img src="ruta-a-tu-foto-retrato6.jpg" alt="Retrato artístico con juego de luces y sombras">
+                        </figure>
+                    </div>
+                </article>
+
+                <!-- FAMILIA -->
+                <article class="portfolio-category familia" data-category="familia">
+                    <h3>Familia</h3>
+                    <div class="portfolio-category-grid">
+                        <figure class="portfolio-item" data-category="familia">
+                            <img src="ruta-a-tu-foto-familia1.jpg" alt="Familia jugando con sus hijos en un parque">
+                        </figure>
+                        <figure class="portfolio-item" data-category="familia">
+                            <img src="ruta-a-tu-foto-familia2.jpg" alt="Fotografía familiar abrazados en un entorno natural">
+                        </figure>
+                        <figure class="portfolio-item" data-category="familia">
+                            <img src="ruta-a-tu-foto-familia3.jpg" alt="Padres sujetando a su bebé durante una sesión de fotos">
+                        </figure>
+                        <figure class="portfolio-item" data-category="familia">
+                            <img src="ruta-a-tu-foto-familia4.jpg" alt="Familia caminando de la mano por la playa al atardecer">
+                        </figure>
+                        <figure class="portfolio-item" data-category="familia">
+                            <img src="ruta-a-tu-foto-familia5.jpg" alt="Retrato familiar sentado en el salón con luz natural">
+                        </figure>
+                        <figure class="portfolio-item" data-category="familia">
+                            <img src="ruta-a-tu-foto-familia6.jpg" alt="Niños riendo durante una sesión de fotos familiar">
+                        </figure>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi" class="sobre-mi section-padding">
+            <div class="sobre-mi-inner">
+                <div class="sobre-mi-texto">
+                    <h2>Sobre mí</h2>
+                    <p>
+                        Soy un fotógrafo especializado en sesiones de pareja, retrato y familia. Me encanta trabajar con luz natural,
+                        tonos suaves y composiciones sencillas que pongan el foco en las personas y sus emociones.
+                    </p>
+                    <p>
+                        En cada sesión busco crear un ambiente cómodo y cercano, para que puedas olvidarte de la cámara y disfrutar del momento.
+                        Mi enfoque es natural y espontáneo: nada de poses rígidas, solo momentos reales que cuenten tu historia.
+                    </p>
+                    <p>
+                        Trabajo principalmente en exteriores y lifestyle, aunque también realizo sesiones en interior con una estética cálida
+                        y cuidada. Si te gusta la fotografía auténtica y con un toque atemporal, estaré encantado de crear recuerdos contigo.
+                    </p>
+                </div>
+                <div class="sobre-mi-foto">
+                    <div class="sobre-mi-foto-placeholder">
+                        <span>Tu foto aquí</span>
+                    </div>
+                    <!-- Puedes sustituir el div anterior por una imagen real:
+                    <img src="ruta-a-tu-foto-perfil.jpg" alt="Retrato del fotógrafo o fotógrafa">
+                    -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto" class="contacto section-padding">
+            <div class="section-heading">
+                <h2>Contacto</h2>
+                <p>Si quieres reservar una sesión o tienes alguna pregunta, completa el formulario y te responderé lo antes posible.</p>
+            </div>
+
+            <div class="contacto-grid">
+                <div class="contacto-form-wrapper">
+                    <form class="contact-form" action="#" method="post" novalidate>
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" required placeholder="tu-correo@ejemplo.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje</label>
+                            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntame qué tipo de sesión te gustaría realizar"></textarea>
+                        </div>
+                        <button type="submit" class="btn-primario">Enviar</button>
+                        <p class="form-note">Formulario de ejemplo. Configura un sistema de correo o backend para recibir los mensajes.</p>
+                    </form>
+                </div>
+
+                <div class="contacto-info">
+                    <h3>Redes y contacto directo</h3>
+                    <p>
+                        También puedes escribirme o seguir mi trabajo en redes sociales:
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/tuusuario" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+                            <span class="social-short">IG</span>
+                            <span class="social-text">@tuusuario</span>
+                        </a>
+                        <a href="mailto:tu-correo@ejemplo.com" class="social-icon" aria-label="Enviar correo electrónico">
+                            <span class="social-short">@</span>
+                            <span class="social-text">tu-correo@ejemplo.com</span>
+                        </a>
+                    </div>
+                    <p class="contacto-pequeno">
+                        Sustituye estos enlaces por tus perfiles reales y tu dirección de correo para empezar a recibir solicitudes de sesión.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; <span id="current-year"></span> TuNombre Fotografía. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
